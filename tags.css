@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Philosopher", serif;
+}
+
+#background1{
+background-image: url(bg3.jpg);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-attachment: fixed;
+}
+.page-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+}
+.page{
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    padding: 1px;
+}
+.page > div{
+    display: inline-block;
+}
+.page a{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30px;
+   height: 30px;
+   border: 2px solid white;
+   border-radius: 100%;
+   background-color: darkolivegreen;
+   color: beige;
+   text-decoration: none;
+   font-size: bold;
+   transition: 0.3s ease, transform 0.2s ease;
+}
+.page a:hover{
+    background-color: #9F8C76;
+    transform: scale(1.2);
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: darkolivegreen;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span{
+    color: #9F8C76;
+    text-shadow: 0 0 20px lightslategray;
+}
+.top,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: greenyellow;
+    opacity: 0;
+    pointer-events: none;
+    font-size: clamp 2.5rem, 0.5rem + 5vw,3rem ;
+}
+.portfolio{
+    display: flex;
+    justify-content: center;
+    margin-left: 350px;
+    margin-top: 30px;
+}
+.welcome{
+    display: flex;
+    text-align: center;
+    color: darkolivegreen;
+    font-size: 40px;
+    font-weight: 900;
+}
+.welcome span{
+    font-size: 50px;
+    font-weight: 900;
+    color: #9F8C76;
+    margin-top: 30px;
+    overflow-wrap: break-word;
+}
+.content h1{
+    font-size: 40px;
+    color:darkolivegreen;
+    font-weight: 600;
+}
+.work{
+    font-size: 70px;
+    font-weight: 800;
+    color:darkolivegreen;
+}
+.content button{
+    text-align: center ;
+    width: 110px;
+    height: 6vh;
+    overflow: hidden;
+    border: none;
+    background-color: #9F8C76;
+    color: whitesmoke;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+.content button:hover{
+    scale: 1.1;
+    color: #9F8C76;
+    border: 2px solid #9F8C76;
+    background-color:transparent ;
+    font-weight: 700;
+    box-shadow: 0 0 40px #9F8C76 ;
+}
+.content a{
+    text-decoration: none;
+}
+.content{
+    margin-top: 70px;
+    margin-left: 90px;
+    width: 100%;
+}
+.social1{
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    padding: 40px 0;
+}
+.social1 a{
+    font-size: 20px;
+    color: darkolivegreen;
+    width: 15px;
+    padding: 5px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 15px;
+    transition: 0.3s ease-in-out;
+}
+.social1 a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: black;
+}
+.container .topics{
+   display: flex;
+}
+
+.container .topics a{
+    position: relative;
+    font-size: 1.5rem;
+    color: #9F8C76;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s linear;
+}
+.container .topics a::before{
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s linear;
+}
+.container .topics a:hover::before{
+    width: 100%;
+}
+.container .topics a:hover{
+    color: darkolivegreen;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top:0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(5px)brightness(40%);
+    box-shadow: 0 0 20px darkolivegreen;
+    transition: 0.2s linear;
+}
+.dropdown .topics a{
+    display: flex;
+    color: #9F8C76;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.3s linear;
+}
+.dropdown .topics a:hover{
+    background-color: black;
+}
+.main{
+    margin-top: 80px;
+    margin-right: 50px;
+    float: right;
+    display: flex;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #9F8C76;
+}
+
+.abt1{grid-area: head; color: darkolivegreen;}
+.abt2{grid-area: about;color: darkolivegreen;font-size: 30px;font-weight: 500;}
+.abt3{grid-area: education;color: darkolivegreen;font-size: 30px;font-weight: 500;}
+.abt4{grid-area: approach;color: darkolivegreen;font-size: 30px;font-weight: 500;}
+.abt5{grid-area: down;color: darkolivegreen;font-size: 30px;font-weight: 500;}
+.abtspace .abt1{
+    font-size: 60px;
+    font-weight: 500;
+    text-align: center;
+    font-weight: 300;
+}
+.abtspace{
+    display: grid;
+    grid-template-areas:
+    'head head head' 
+    'about education approach'
+    'about education approach'
+    'about education approach'
+    'down down down';
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+    padding: 30px;
+    align-items: center;
+}
+.abtspace > div{
+    padding: 35px 45px;
+    font-size: 20px;  
+}
+.abtspace .para{
+    color: beige;
+    background-color: #9F8C76;
+    width:auto;
+    height: auto;
+    padding: 10px;
+    
+}
+.abtspace >div:hover{
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+.abtspace .abt5 button{
+    text-align: center ;
+    width: 120px;
+    height: 6vh;
+    overflow: hidden;
+    border: none;
+    background-color: darkolivegreen;
+    color: whitesmoke;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+.abtspace .abt5 button:hover{
+    scale: 1.1;
+    color: #9F8C76;
+    border: 2px solid #9F8C76;
+    background-color:transparent ;
+    font-weight: 700;
+    box-shadow: 0 0 40px #9F8C76 ;
+}
+.abtspace a{
+    text-decoration: none;
+    color: beige;
+}
+.more{
+    padding: 50px 15px;
+}
+.more-heading{
+    color: darkolivegreen;
+    font-size: 30px;
+    text-align: center;
+}
+.more h2{
+    margin-bottom: 2rem;
+}
+.timeline-items{
+    max-width: 1500px;
+    max-height: 300px;
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-date{
+    font-size: 25px;
+    font-weight: 400;
+    color: darkolivegreen;
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background-color: #9F8C76;
+    border: 4px solid darkolivegreen;
+    padding: 20px 30px;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px darkolivegreen;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow:  0 0 25px darkolivegreen;
+}
+.timeline-content p{
+    color: beige;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+.list{
+    color: beige;
+}
+.list h2{
+    font-size: 50px;
+    margin-top: 65px;
+    text-align: center;
+    color:darkolivegreen;
+}
+.skill-container{
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    align-items: center;
+    gap: 1.2rem;  
+}
+.skill-box{
+    background-color: #9F8C76;
+    height: 150px;
+    width: 150px;
+    margin-top: 60px;
+    margin-left: 135px;
+    border-radius: 1rem;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.skill-box:hover{
+    background: darkolivegreen;
+    color: whitesmoke;
+    border: 3px solid darkslategray;
+    transform: scale(1.03);
+}
+.skill-box .Skill-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 100px;
+    justify-content: center;
+    padding: 35px;
+}
+.Skill-info h4{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 2;
+}
+.Skill-info p{
+    font-size: 40px;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+}
+
+
+
+
+
+.contact h2{
+    margin-top: 35px;
+    color: #9F8C76;
+    text-align: center;
+}
+.contact span{
+    color: darkolivegreen;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 1rem 20px;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 85%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    color: beige;
+    background: #9F8C76;
+    border-radius: 3%;
+    border: 2px solid darkolivegreen;
+    margin: 10px 0;                                                                                             rem 0;
+    resize: none;
+}
+.contact .btn{
+    text-align: center ;
+    width: 120px;
+    height: 6vh;
+    overflow: hidden;
+    border: none;
+    background-color: darkolivegreen;
+    color: whitesmoke;
+    outline: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+.contact .btn:hover{
+    scale: 1.1;
+    color: #9F8C76;
+    border: 2px solid #9F8C76;
+    background-color:transparent ;
+    font-weight: 700;
+    box-shadow: 0 0 40px #9F8C76 ;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #9F8C76;
+}
+.social{
+    margin-top: -30px;
+    margin-left: 620px;
+    position:absolute;
+}
+.footer .social a{
+    position: relative;
+    font-size: 20px;
+    color: darkolivegreen;
+    width: 15px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100%;
+    margin-right: 15px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: darkslategray;
+}
+.footer ul{
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+}
+.footer ul li a{
+    color: beige;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid darkolivegreen;
+}
+.footer .copyright{
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: darkolivegreen;
+}
+
+
+    
+
+
